@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NutriCycle - Yeni Nesil Mutfak Ekonomisi</title>
+    <meta name="description" content="NutriCycle ile tarladan sofraya atıksız ve döngüsel bir mutfak ekonomisine adım atın.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Ambient background blurred spheres -->
+    <div class="ambient-blob blob-1"></div>
+    <div class="ambient-blob blob-2"></div>
+
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container header-content">
+            <a href="#" class="logo">
+                <!-- If the user uploads logo.png, it will replace this, otherwise fallback text -->
+                <img src="logo.png" alt="" class="logo-img" id="logoImg" onerror="this.onerror=null; this.style.display='none'; document.getElementById('logoText').style.display='block';">
+                <span id="logoText" class="logo-text" style="display:none;"><span class="text-gradient">Nutri</span>Cycle</span>
+            </a>
+            <nav class="nav">
+                <a href="#vision" class="nav-link">Vizyon</a>
+                <a href="#pillars" class="nav-link">Sütunlar</a>
+                <button id="playVideoBtn" class="btn btn-outline btn-glow">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="width:18px; height:18px; margin-right:6px;">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    Videoyu İzle
+                </button>
+                <a href="#contact" class="btn btn-primary btn-glow">İletişime Geç</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero glass-hero">
+        <div class="hero-bg-wrapper">
+            <video autoplay loop muted playsinline class="hero-bg-video">
+                <source src="assets/Intro.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="container hero-content reveal">
+            <h1 class="hero-title">Yeni Nesil Mutfak Ekonomisi</h1>
+            <p class="hero-subtitle">Geleceğin mutfağını bugünden inşa ediyor, atığı değere dönüştürerek sürdürülebilir bir ekosistem yaratıyoruz.</p>
+            <div class="hero-actions">
+                <a href="#pillars" class="btn btn-large btn-glass">Modelimizi Keşfedin</a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+            </svg>
+        </div>
+    </section>
+
+    <!-- Vision Section -->
+    <section id="vision" class="section vision-section">
+        <div class="container section-content text-center reveal">
+            <span class="eyebrow text-gradient">Stratejik Yol Haritası</span>
+            <h2 class="section-title">Vizyonumuz</h2>
+            <div class="section-text vision-text-content">
+                <p>Küresel gıda krizinin, iklim değişikliğinin ve tedarik zinciri sorunlarının derinden hissedildiği günümüzde; sürdürülebilirliği sadece bir "tercih" değil, bir "zorunluluk" ve hepsinden önemlisi sürdürülebilir bir "ekonomi modeli" olarak görüyoruz.</p>
+                <p>Bu vizyonla kurduğumuz <strong>NutriCycle</strong> olarak; gıda atığını minimize eden, yerel üreticiyi kalkındıran ve mutfak operasyonlarını verimli birer döngüsel ekonomi modeline dönüştüren kapsamlı bir ekosistem inşa ediyoruz.</p>
+                <p>Şirketimizin temel misyonu; sürdürülebilir mutfağı, sosyal sorumluluk projelerinin ötesine taşıyıp, dokunabildiği tüm hayatlar, sektörler ve kamusal alanlar için ölçülebilir bir refah kaynağı haline getirmektir.</p>
+                <p>NutriCycle olarak geliştirdiğimiz stratejik yol haritası aşağıdaki temel sütunlar üzerine kuruludur:</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pillars Section -->
+    <section id="pillars" class="section pillars-section">
+        <div class="container">
+            <div class="text-center reveal">
+                <span class="eyebrow text-gradient">Dört Temel</span>
+                <h2 class="section-title">Stratejik Sütunlarımız</h2>
+            </div>
+            
+            <div class="grid pillars-grid">
+                
+                <!-- Pillar 1 -->
+                <div class="card reveal fade-up" data-pillar="ekonomi">
+                    <div class="card-img-wrapper">
+                        <img src="assets/pillar_economy.png" alt="Ekonomik Entegrasyon" class="card-img">
+                        <div class="card-img-overlay"></div>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Ekonomik Entegrasyon</h3>
+                        <p class="card-text">Atığı bir maliyet kalemi olmaktan çıkarıp kapalı devre bir gelir modeli yaratmak.</p>
+                        <span class="card-link">Detayları Gör K</span>
+                    </div>
+                </div>
+
+                <!-- Pillar 2 -->
+                <div class="card reveal fade-up delay-1" data-pillar="toplum">
+                    <div class="card-img-wrapper">
+                        <img src="assets/pillar_community.png" alt="Toplumsal Etki" class="card-img">
+                        <div class="card-img-overlay"></div>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Toplumsal Etki</h3>
+                        <p class="card-text">Adil ticaret ve sağlıklı gıdaya erişimi lüks olmaktan çıkarıp standart hale getirmek.</p>
+                        <span class="card-link">Detayları Gör K</span>
+                    </div>
+                </div>
+
+                <!-- Pillar 3 -->
+                <div class="card reveal fade-up delay-2" data-pillar="kamu">
+                    <div class="card-img-wrapper">
+                        <img src="assets/pillar_public.png" alt="Kamusal Alan Dönüşümü" class="card-img">
+                        <div class="card-img-overlay"></div>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Kamusal Dönüşüm</h3>
+                        <p class="card-text">Toplu tüketim alanlarında "Sıfır Atık Mutfak" prensipleri ile bütçeye katkı sağlamak.</p>
+                        <span class="card-link">Detayları Gör K</span>
+                    </div>
+                </div>
+
+                <!-- Pillar 4 -->
+                <div class="card reveal fade-up delay-3" data-pillar="finans">
+                    <div class="card-img-wrapper">
+                        <img src="assets/pillar_finance.png" alt="Finansal Sürdürülebilirlik" class="card-img">
+                        <div class="card-img-overlay"></div>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Finansal Dayanıklılık</h3>
+                        <p class="card-text">Yeşil Mutabakat fonları ve ulusal teşvikleri entegre ederek yatırım çekiciliğini artırmak.</p>
+                        <span class="card-link">Detayları Gör K</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact CTA -->
+    <section id="contact" class="section cta-section glass-cta">
+        <div class="container text-center reveal">
+            <h2 class="cta-title">Geleceği Birlikte İnşa Edelim</h2>
+            <p class="cta-text">NutriCycle uzmanlığıyla tanışın. Potansiyel iş birliklerini değerlendirmek ve dönüşüme liderlik etmek için bizimle iletişime geçin.</p>
+            
+            <div class="contact-details" style="margin: 30px 0 40px 0; color: rgba(255,255,255,0.85); font-size: 1.1rem; line-height: 1.8;">
+                <p style="margin-bottom: 5px; font-weight: 600; font-size: 1.2rem; color: var(--color-white)">
+                    NutriCycle Sürdürülebilir Gıda, Döngüsel Ekonomi, Tarım Teknolojileri, Tarım, Bilişim ve Enerji Ticaret LTD. ŞTİ.
+                </p>
+                <p style="margin-bottom: 10px; display: flex; align-items: center; justify-content: center; gap: 8px;">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="width:22px; height:22px; color:var(--color-primary);">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                    Fındıkburnu mahallesi AMASYA/MERKEZ
+                </p>
+                <p style="display: flex; align-items: center; justify-content: center; gap: 8px;">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="width:22px; height:22px; color:var(--color-primary);">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                    <a href="mailto:nutricycleltd@gmail.com" class="text-hover-primary" style="color:var(--color-white); text-decoration:none; transition: color 0.3s ease;">nutricycleltd@gmail.com</a>
+                </p>
+            </div>
+
+            <a href="mailto:nutricycleltd@gmail.com" class="btn btn-primary btn-large btn-glow">Bize Ulaşın</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container text-center">
+            <div class="footer-logo">
+                <span class="text-gradient font-bold">Nutri</span><span style="color:var(--color-text)">Cycle</span>
+            </div>
+            <p>&copy; 2026 NutriCycle Yeni Nesil Mutfak Ekonomisi. Tüm Hakları Saklıdır.</p>
+        </div>
+    </footer>
+
+    <!-- Premium Modal/Popup -->
+    <div class="modal" id="pillarModal">
+        <div class="modal-backdrop"></div>
+        <div class="modal-content glass-panel">
+            <div class="modal-header-img">
+                <img src="" id="modalImg" alt="Modal Image">
+                <div class="modal-img-gradient"></div>
+            </div>
+            <button class="modal-close" id="closeModal">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+            <div class="modal-body">
+                <div class="modal-icon-container" id="modalIcon"></div>
+                <h2 class="modal-title" id="modalTitle">Başlık</h2>
+                <p class="modal-text" id="modalText">Detaylı açıklama buraya gelecek.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Video Player Modal -->
+    <div class="modal" id="videoModal">
+        <div class="modal-backdrop"></div>
+        <div class="modal-content glass-panel video-modal-content">
+            <button class="modal-close" id="closeVideoModal">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+            <div class="video-container">
+                <video id="fullVideo" controls class="full-video">
+                    <source src="assets/outro.mp4" type="video/mp4">
+                    Tarayıcınız video etiketini desteklemiyor.
+                </video>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+</html>
