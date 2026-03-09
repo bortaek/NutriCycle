@@ -292,34 +292,38 @@ p {
 /* Hero Section */
 .hero {
     position: relative;
-    min-height: 100vh;
+    width: 100%;
+    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     padding-top: 0; 
-    overflow: hidden; /* Added to prevent video overflowing outside Section */
+    overflow: hidden;
 }
 
 .hero-bg-wrapper {
     position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
+    top: 0; left: 0; right: 0; bottom: 0;
     z-index: -1;
-    overflow: hidden;
+    background-color: var(--color-bg);
 }
 
-.hero-bg-video {
+.hero-bg-img {
+    position: absolute;
+    top: 0; left: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    filter: contrast(1.1) saturate(1.15) brightness(1.05) drop-shadow(0 0 10px rgba(0,0,0,0.5));
-    transform: scale(1.01); /* to prevent micro-bleeding on edges */
+    display: block;
+    filter: brightness(0.65) contrast(1.1);
 }
 
 .hero-overlay {
     position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
+    top: 0; left: 0; right: 0; bottom: 0;
     background: linear-gradient(180deg, rgba(20,22,21,0.6) 0%, rgba(20,22,21,0.95) 100%);
+    pointer-events: none;
 }
 
 @keyframes slowZoom {
@@ -370,6 +374,7 @@ p {
 /* Vision */
 .vision-section {
     background: transparent;
+    padding-bottom: 2rem; /* Reduced padding since video is right after */
 }
 .vision-section .section-title { font-size: 3.5rem; margin-bottom: 40px; }
 .vision-section .section-text {
@@ -389,6 +394,34 @@ p {
 .vision-section strong {
     color: var(--color-white);
     font-weight: 500;
+}
+
+/* Inline Video Showcase */
+.video-showcase-section {
+    padding-top: 2rem;
+    padding-bottom: 6rem;
+}
+
+.video-showcase-container {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    position: relative;
+    aspect-ratio: 16 / 9;
+    background: #000;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.5), 0 0 40px rgba(79, 111, 82, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.inline-showcase-video {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center top;
+    filter: contrast(1.05) saturate(1.1);
 }
 
 /* Pillars Section with Image Cards */

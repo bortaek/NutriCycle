@@ -44,10 +44,7 @@
     <!-- Hero Section -->
     <section class="hero glass-hero">
         <div class="hero-bg-wrapper">
-            <video autoplay loop muted playsinline class="hero-bg-video">
-                <source src="assets/Intro.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
+            <img src="assets/hero_bg.png" alt="Hero Background" class="hero-bg-img" onerror="this.src=''; this.style.backgroundColor='#141615';">
             <div class="hero-overlay"></div>
         </div>
         <div class="container hero-content reveal">
@@ -78,6 +75,18 @@
         </div>
     </section>
 
+    <!-- Inline Video Showcase Section -->
+    <section class="section video-showcase-section">
+        <div class="container reveal">
+            <div class="video-showcase-container glass-panel">
+                <video autoplay loop muted playsinline class="inline-showcase-video">
+                    <source src="assets/Intro.mp4" type="video/mp4">
+                    Tarayıcınız video etiketini desteklemiyor.
+                </video>
+            </div>
+        </div>
+    </section>
+
     <!-- Pillars Section -->
     <section id="pillars" class="section pillars-section">
         <div class="container">
@@ -97,7 +106,7 @@
                     <div class="card-body">
                         <h3 class="card-title">Ekonomik Entegrasyon</h3>
                         <p class="card-text">Atığı bir maliyet kalemi olmaktan çıkarıp kapalı devre bir gelir modeli yaratmak.</p>
-                        <span class="card-link">Detayları Gör K</span>
+                        <span class="card-link">Detayları Gör</span>
                     </div>
                 </div>
 
@@ -110,7 +119,7 @@
                     <div class="card-body">
                         <h3 class="card-title">Toplumsal Etki</h3>
                         <p class="card-text">Adil ticaret ve sağlıklı gıdaya erişimi lüks olmaktan çıkarıp standart hale getirmek.</p>
-                        <span class="card-link">Detayları Gör K</span>
+                        <span class="card-link">Detayları Gör</span>
                     </div>
                 </div>
 
@@ -123,7 +132,7 @@
                     <div class="card-body">
                         <h3 class="card-title">Kamusal Dönüşüm</h3>
                         <p class="card-text">Toplu tüketim alanlarında "Sıfır Atık Mutfak" prensipleri ile bütçeye katkı sağlamak.</p>
-                        <span class="card-link">Detayları Gör K</span>
+                        <span class="card-link">Detayları Gör</span>
                     </div>
                 </div>
 
@@ -136,7 +145,7 @@
                     <div class="card-body">
                         <h3 class="card-title">Finansal Dayanıklılık</h3>
                         <p class="card-text">Yeşil Mutabakat fonları ve ulusal teşvikleri entegre ederek yatırım çekiciliğini artırmak.</p>
-                        <span class="card-link">Detayları Gör K</span>
+                        <span class="card-link">Detayları Gör</span>
                     </div>
                 </div>
 
@@ -161,11 +170,17 @@
                     </svg>
                     Fındıkburnu mahallesi AMASYA/MERKEZ
                 </p>
-                <p style="display: flex; align-items: center; justify-content: center; gap: 8px;">
+                <p style="margin-bottom: 10px; display: flex; align-items: center; justify-content: center; gap: 8px;">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="width:22px; height:22px; color:var(--color-primary);">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                     </svg>
                     <a href="mailto:nutricycleltd@gmail.com" class="text-hover-primary" style="color:var(--color-white); text-decoration:none; transition: color 0.3s ease;">nutricycleltd@gmail.com</a>
+                </p>
+                <p style="display: flex; align-items: center; justify-content: center; gap: 8px;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" style="color:#FF0000;">
+                        <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/>
+                    </svg>
+                    <a href="https://www.youtube.com/@Nutricycle" target="_blank" rel="noopener noreferrer" class="text-hover-primary" style="color:var(--color-white); text-decoration:none; transition: color 0.3s ease;">@Nutricycle</a>
                 </p>
             </div>
 
