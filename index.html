@@ -160,6 +160,36 @@
         </div>
     </section>
 
+    <!-- Image Gallery Section -->
+    <section id="gallery" class="section gallery-section">
+        <div class="container text-center reveal">
+            <span class="eyebrow text-gradient">Galerimiz</span>
+            <h2 class="section-title">Anı Yakalayın</h2>
+        </div>
+        <div class="gallery-container">
+            <div class="gallery-track">
+                <!-- Original Set -->
+                <img src="assets/1.jpeg" alt="Gallery 1" class="gallery-item">
+                <img src="assets/2.png" alt="Gallery 2" class="gallery-item">
+                <img src="assets/3.jpeg" alt="Gallery 3" class="gallery-item">
+                <img src="assets/4.jpeg" alt="Gallery 4" class="gallery-item">
+                <img src="assets/5.jpeg" alt="Gallery 5" class="gallery-item">
+                <img src="assets/6.jpg" alt="Gallery 6" class="gallery-item">
+                <img src="assets/7.png" alt="Gallery 7" class="gallery-item">
+                <img src="assets/8.png" alt="Gallery 8" class="gallery-item">
+                <!-- Duplicated Set for Infinite Scroll -->
+                <img src="assets/1.jpeg" alt="Gallery 1" class="gallery-item">
+                <img src="assets/2.png" alt="Gallery 2" class="gallery-item">
+                <img src="assets/3.jpeg" alt="Gallery 3" class="gallery-item">
+                <img src="assets/4.jpeg" alt="Gallery 4" class="gallery-item">
+                <img src="assets/5.jpeg" alt="Gallery 5" class="gallery-item">
+                <img src="assets/6.jpg" alt="Gallery 6" class="gallery-item">
+                <img src="assets/7.png" alt="Gallery 7" class="gallery-item">
+                <img src="assets/8.png" alt="Gallery 8" class="gallery-item">
+            </div>
+        </div>
+    </section>
+
     <!-- Contact CTA -->
     <section id="contact" class="section cta-section glass-cta">
         <div class="container text-center reveal">
@@ -241,6 +271,19 @@
                     Tarayıcınız video etiketini desteklemiyor.
                 </video>
             </div>
+        </div>
+    </div>
+
+    <!-- Lightbox Modal for Gallery -->
+    <div id="lightboxModal" class="modal">
+        <div class="modal-backdrop"></div>
+        <div class="modal-content glass-panel lightbox-content" style="width: auto; max-width: 95vw; background: transparent; padding: 0; display: flex; justify-content: center; align-items: center; box-shadow: none; border: none; overflow: visible;">
+            <div class="modal-close" id="closeLightboxModal" style="z-index: 1002; background: rgba(0,0,0,0.8); right: 20px; top: 20px;">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </div>
+            <img id="lightboxImg" src="" alt="Gallery Full" style="max-width: 100%; max-height: 85vh; object-fit: contain; border-radius: 12px; box-shadow: 0 20px 60px rgba(0,0,0,0.8);">
         </div>
     </div>
 

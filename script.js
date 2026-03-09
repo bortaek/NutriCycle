@@ -122,4 +122,41 @@ document.addEventListener('DOMContentLoaded', () => {
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && videoModal.classList.contains('active')) closeVideoModal();
     });
+
+    // Lightbox Gallery Logic
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    const lightboxModal = document.getElementById('lightboxModal');
+    const lightboxImg = document.getElementById('lightboxImg');
+    const closeLightboxModalBtn = document.getElementById('closeLightboxModal');
+
+    const openLightbox = (src) => {
+        lightboxImg.src = src;
+        lightboxModal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    };
+
+    const closeLightbox = () => {
+        lightboxModal.classList.remove('active');
+        setTimeout(() => { document.body.style.overflow = ''; }, 400);
+        setTimeout(() => { lightboxImg.src = ''; }, 400); // Clear source after animation
+    };
+
+    galleryItems.forEach(item => {
+        item.addEventListener('click', () => {
+            openLightbox(item.src);
+        });
+    });
+
+    if (closeLightboxModalBtn) closeLightboxModalBtn.addEventListener('click', closeLightbox);
+    
+    // Close on backdrop click for lightbox modal
+    if (lightboxModal) {
+        const lightboxBackdrop = lightboxModal.querySelector('.modal-backdrop');
+        if (lightboxBackdrop) lightboxBackdrop.addEventListener('click', closeLightbox);
+    }
+
+    // Escape key for lightbox modal
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && lightboxModal && lightboxModal.classList.contains('active')) closeLightbox();
+    });
 });
