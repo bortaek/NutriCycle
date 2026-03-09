@@ -616,11 +616,40 @@ p {
 
 /* Responsive Adjustments */
 @media (max-width: 768px) {
+    /* Base typography */
+    html { font-size: 14px; }
+    
     .hero-title { font-size: 3.5rem; }
-    .hero-subtitle { font-size: 1.25rem; }
-    .header-content { flex-direction: column; gap: 16px; }
-    .nav { flex-wrap: wrap; justify-content: center; }
-    .vision-section .section-title { font-size: 2.5rem; }
-    .modal-body { padding: 0 24px 32px 24px; }
-    .modal-title { font-size: 1.75rem; }
+    .hero-subtitle { font-size: 1.25rem; margin-bottom: 32px; }
+    
+    /* Header & Navigation */
+    .header-content { flex-direction: column; gap: 16px; align-items: center; }
+    .nav { flex-wrap: wrap; justify-content: center; gap: 16px; }
+    .logo-img { height: 32px; }
+    .btn { padding: 10px 20px; font-size: 0.95rem; }
+    
+    /* Sections & Cards */
+    .section { padding: 5rem 0; }
+    .vision-section .section-title { font-size: 2.5rem; margin-bottom: 24px; }
+    .vision-section .section-text { font-size: 1.25rem; }
+    .pillars-section .section-title { font-size: 2.25rem; margin-bottom: 32px; }
+    .grid { grid-template-columns: 1fr; gap: 24px; }
+    .card-img-wrapper { height: 180px; }
+    .card-body { padding: 24px 20px; }
+    
+    /* CTA */
+    .cta-title { font-size: 2.25rem; }
+    
+    /* Modals */
+    .modal-content { width: 95%; max-width: 100%; }
+    .modal-header-img { height: 200px; }
+    .modal-body { padding: 0 20px 24px 20px; margin-top: -30px; }
+    .modal-title { font-size: 1.5rem; margin-bottom: 12px; }
+    .modal-text { font-size: 1rem; }
+    .modal-icon-container { width: 48px; height: 48px; margin-bottom: 16px; }
+    .modal-icon-container svg { width: 24px; height: 24px; }
+    
+    /* Video Modal Specific */
+    .video-modal-content .modal-close { top: 5px; right: 5px; width: 36px; height: 36px; }
+    .full-video { max-height: 70vh; }
 }
