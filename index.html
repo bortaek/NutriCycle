@@ -27,16 +27,28 @@
                 <span id="logoText" class="logo-text" style="display:none;"><span class="text-gradient">Nutri</span>Cycle</span>
             </a>
             <nav class="nav">
-                <a href="#vision" class="nav-link">Vizyon</a>
-                <a href="#pillars" class="nav-link">Sütunlar</a>
-                <button id="playVideoBtn" class="btn btn-outline btn-glow">
+                <a href="#vision" class="nav-link nav-home-link">Vizyon</a>
+                <a href="#pillars" class="nav-link nav-home-link">Sütunlar</a>
+                <button id="playVideoBtn" class="btn btn-outline btn-glow nav-home-link">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="width:18px; height:18px; margin-right:6px;">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                     Videoyu İzle
                 </button>
-                <a href="#contact" class="btn btn-primary btn-glow">İletişime Geç</a>
+                <a href="#contact" class="btn btn-primary btn-glow nav-home-link">İletişime Geç</a>
+                <button id="navShopBtn" class="btn btn-accent btn-glow">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="width:18px; height:18px; margin-right:6px;">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                    </svg>
+                    Satın Al
+                </button>
+                <button id="navCartBtn" class="cart-nav-btn" aria-label="Sepet">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 100 4 2 2 0 000-4z" />
+                    </svg>
+                    <span id="cartBadge" class="cart-badge" style="display:none;">0</span>
+                </button>
             </nav>
         </div>
     </header>
@@ -234,6 +246,205 @@
             <p>&copy; 2026 NutriCycle Yeni Nesil Mutfak Ekonomisi. Tüm Hakları Saklıdır.</p>
         </div>
     </footer>
+
+    <!-- ===================== SHOP PAGE (Hidden by default) ===================== -->
+    <div id="shopPage" class="page-view" style="display:none;">
+        <!-- Shop Header -->
+        <div class="shop-hero">
+            <div class="container text-center">
+                <button id="shopBackBtn" class="back-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>
+                    Ana Sayfaya Dön
+                </button>
+                <span class="eyebrow text-gradient">NutriCycle Mağaza</span>
+                <h1 class="section-title" style="font-size:3.5rem; margin-bottom:16px;">Çözümlerimiz</h1>
+                <p class="hero-subtitle" style="font-size:1.3rem; margin-bottom:0;">Döngüsel ekonomi ekosistemine adım atmanız için ihtiyacınız olan tüm çözümler.</p>
+            </div>
+        </div>
+
+        <!-- Product Grid -->
+        <div class="container" style="padding-top:60px; padding-bottom:100px;">
+            <div class="product-grid" id="productGrid">
+                <!-- Products injected by JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- ===================== CHECKOUT PAGE (Hidden by default) ===================== -->
+    <div id="checkoutPage" class="page-view" style="display:none;">
+        <div class="shop-hero">
+            <div class="container text-center">
+                <button id="checkoutBackBtn" class="back-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>
+                    Mağazaya Dön
+                </button>
+                <span class="eyebrow text-gradient">Güvenli Ödeme</span>
+                <h1 class="section-title" style="font-size:3rem; margin-bottom:0;">Siparişinizi Tamamlayın</h1>
+            </div>
+        </div>
+
+        <div class="container" style="padding-top:60px; padding-bottom:100px;">
+            <div class="checkout-layout">
+                <!-- Order Summary -->
+                <div class="checkout-summary glass-panel">
+                    <h3 class="checkout-section-title">Sipariş Özeti</h3>
+                    <div id="checkoutItems"></div>
+                    <div class="checkout-total-row">
+                        <span>Toplam</span>
+                        <span id="checkoutTotal" class="checkout-total-price">₺0</span>
+                    </div>
+                </div>
+
+                <!-- Payment Form -->
+                <div class="checkout-form-wrapper glass-panel">
+                    <h3 class="checkout-section-title">Ödeme Bilgileri</h3>
+                    <form id="paymentForm" class="payment-form" autocomplete="off">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="payName">Ad Soyad</label>
+                                <input type="text" id="payName" placeholder="Adınız Soyadınız" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="payEmail">E-posta</label>
+                                <input type="email" id="payEmail" placeholder="ornek@mail.com" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="payAddress">Adres</label>
+                            <input type="text" id="payAddress" placeholder="Teslimat Adresi" required>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="payCity">Şehir</label>
+                                <input type="text" id="payCity" placeholder="Şehir" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="payZip">Posta Kodu</label>
+                                <input type="text" id="payZip" placeholder="05000" required>
+                            </div>
+                        </div>
+
+                        <div class="form-divider"></div>
+                        <h4 class="form-subtitle">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="width:20px;height:20px;">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                            </svg>
+                            Kart Bilgileri
+                        </h4>
+                        <div class="form-group">
+                            <label for="payCard">Kart Numarası</label>
+                            <input type="text" id="payCard" placeholder="0000 0000 0000 0000" maxlength="19" required>
+                        </div>
+                        <div class="form-row form-row-3">
+                            <div class="form-group">
+                                <label for="payExpiry">Son Kullanma</label>
+                                <input type="text" id="payExpiry" placeholder="AA/YY" maxlength="5" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="payCVC">CVC</label>
+                                <input type="text" id="payCVC" placeholder="123" maxlength="3" required>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-large btn-glow" style="width:100%; margin-top:16px;">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="width:20px;height:20px;margin-right:8px;">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                            </svg>
+                            Ödemeyi Tamamla
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===================== ORDER SUCCESS (Hidden) ===================== -->
+    <div id="orderSuccessPage" class="page-view" style="display:none;">
+        <div class="success-screen">
+            <div class="success-content">
+                <div class="success-icon-ring">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                    </svg>
+                </div>
+                <h2 class="success-title">Siparişiniz Alındı!</h2>
+                <p class="success-text">Siparişiniz başarıyla oluşturuldu. En kısa sürede sizinle iletişime geçeceğiz.</p>
+                <p class="success-order-id">Sipariş No: <span id="orderNumber">#NC-000000</span></p>
+                <button id="successHomeBtn" class="btn btn-primary btn-large btn-glow" style="margin-top:32px;">
+                    Ana Sayfaya Dön
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===================== PRODUCT DETAIL MODAL ===================== -->
+    <div class="modal" id="productModal">
+        <div class="modal-backdrop"></div>
+        <div class="modal-content glass-panel product-modal-content">
+            <button class="modal-close" id="closeProductModal">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+            <div class="product-modal-grid">
+                <div class="product-modal-gallery">
+                    <img id="productModalImg" src="" alt="Ürün" class="product-modal-main-img">
+                </div>
+                <div class="product-modal-info">
+                    <span class="eyebrow text-gradient" id="productModalCategory">Kategori</span>
+                    <h2 class="product-modal-title" id="productModalTitle">Ürün Adı</h2>
+                    <p class="product-modal-price" id="productModalPrice">₺0</p>
+                    <p class="product-modal-desc" id="productModalDesc">Açıklama</p>
+                    <div class="product-features" id="productModalFeatures"></div>
+                    <div class="product-modal-actions">
+                        <button id="addToCartBtn" class="btn btn-primary btn-large btn-glow" style="width:100%;">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="width:20px;height:20px;margin-right:8px;">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 100 4 2 2 0 000-4z" />
+                            </svg>
+                            Sepete Ekle
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===================== CART SLIDE PANEL ===================== -->
+    <div id="cartPanel" class="cart-panel">
+        <div class="cart-panel-backdrop"></div>
+        <div class="cart-panel-content glass-panel">
+            <div class="cart-panel-header">
+                <h3>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="width:24px;height:24px;margin-right:8px;vertical-align:middle;">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 100 4 2 2 0 000-4z" />
+                    </svg>
+                    Sepetim
+                </h3>
+                <button id="closeCartPanel" class="modal-close" style="position:static;">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+            <div class="cart-items" id="cartItems">
+                <div class="cart-empty" id="cartEmpty">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="width:64px;height:64px;color:rgba(255,255,255,0.2);margin-bottom:16px;">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 100 4 2 2 0 000-4z" />
+                    </svg>
+                    <p>Sepetiniz boş</p>
+                </div>
+            </div>
+            <div class="cart-footer" id="cartFooter" style="display:none;">
+                <div class="cart-total">
+                    <span>Toplam</span>
+                    <span id="cartTotal" class="cart-total-price">₺0</span>
+                </div>
+                <button id="checkoutBtn" class="btn btn-primary btn-large btn-glow" style="width:100%;">
+                    Satın Almayı Tamamla
+                </button>
+            </div>
+        </div>
+    </div>
 
     <!-- Premium Modal/Popup -->
     <div class="modal" id="pillarModal">
